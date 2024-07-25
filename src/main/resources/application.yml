@@ -1,14 +1,19 @@
 spring:
-  jpa:
-    database: POSTGRESQL
-    hibernate:
-      ddl-auto: update  # Esta línea es opcional, si quieres que Hibernate actualice automáticamente el esquema de la base de datos
   datasource:
-    platform: postgres
     url: jdbc:postgresql://postgres:5432/basedatosSonar
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
-
+    hikari:
+      maximum-pool-size: 10 # Configura el tamaño máximo del pool de conexiones si es necesario
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update # Esta línea es opcional, si quieres que Hibernate actualice automáticamente el esquema de la base de datos
+    show-sql: true # Muestra las consultas SQL en los registros para depuración
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect # Asegúrate de especificar el dialecto adecuado para PostgreSQL
+        format_sql: true # Opcional: formatea las consultas SQL en los registros
 server:
   port: 8080

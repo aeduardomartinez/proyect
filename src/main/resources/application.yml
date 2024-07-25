@@ -5,10 +5,10 @@ spring:
       ddl-auto: update  # Esta línea es opcional, si quieres que Hibernate actualice automáticamente el esquema de la base de datos
   datasource:
     platform: postgres
-    url: jdbc:postgresql://postgres:5432/basedatosSonar
+    url: jdbc:postgresql://localhost:5432/sonardb
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
 
 server:
-  port: 5432
+  port: 8080

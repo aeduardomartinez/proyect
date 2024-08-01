@@ -90,6 +90,7 @@ public class Tarea {
 
     public String getPrioridad() {
         return prioridad;
+
     }
 
     public void setPrioridad(String prioridad) {

@@ -92,6 +92,7 @@ public class Tarea {
         return prioridad;
 
     }
+
     public void setPrioridad(String prioridad) {
         this.prioridad = prioridad;
     }
